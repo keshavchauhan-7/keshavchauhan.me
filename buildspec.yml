@@ -4,12 +4,14 @@ env:
   variables:
     S3_BUCKET: "keshavchauhan.me"
     CLOUDFRONT_DIST_ID: "E3TDNVDDQ68SJE"
+    AWS_DEFAULT_REGION: "ap-south-1"
 
 phases:
   pre_build:
     commands:
       - echo "Checking S3 bucket access..."
-      - aws s3 ls s3://$S3_BUCKET/ --region ap-south-1 || echo "⚠️ Cannot access bucket"
+      - aws s3 ls s3://$S3_BUCKET/ || echo "⚠️ Cannot access bucket"
+
   install:
     commands:
       - echo "Nothing to install for static site"
@@ -17,7 +19,8 @@ phases:
   build:
     commands:
       - echo "Deploying static website files to S3..."
-      - aws s3 cp . s3://$S3_BUCKET/ --recursive --exclude ".git/*" --exclude "buildspec.yml" --exclude ".gitignore" --no-progress --region ap-south-1
+      - aws s3 cp . s3://$S3_BUCKET/ --recursive \
+          --exclude ".git/*" --exclude "buildspec.yml" --exclude ".gitignore" --no-progress
       - echo "Invalidating CloudFront cache..."
       - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
 
