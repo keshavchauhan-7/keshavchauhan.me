@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to My Static Site</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7e1d7;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #edafb8;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      header h1 {
+        font-size: 3rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      section p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Static Website</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Coffee Time</h2>
+      <p>There's nothing like a cup of fresh coffee to start your day right.</p>
+      <img src="images/aws1.jpeg" alt="A cup of coffee" />
+    </section>
+
+    <section>
+      <h2>Relaxing Beach</h2>
+      <p>Feel the breeze and let the waves wash your worries away.</p>
+      <img src="images/aws2.jpeg" alt="A beach scene" />
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+</body>
+</html>
